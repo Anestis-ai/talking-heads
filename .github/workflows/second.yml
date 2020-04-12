@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: PI
+name: CI
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -9,7 +9,10 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+#   Set your workflow to run every day of the week from Monday to Sunday at 2:00 UTC 
+on:
+  schedule:
+  - cron: "0 2 * * 1-7"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
